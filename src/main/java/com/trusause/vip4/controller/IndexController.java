@@ -31,7 +31,7 @@ public class IndexController {
     @ResponseBody
     @GetMapping("/hello")
     public String hello() {
-        return "hello1";
+        return "hello2";
     }
 
     @ResponseBody
