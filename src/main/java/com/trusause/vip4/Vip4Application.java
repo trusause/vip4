@@ -17,7 +17,7 @@ public class Vip4Application {
     @Bean
     public Redisson redisson() {
         Config config = new Config();
-        config.useSingleServer().setAddress("redis://127.0.0.1:6379").setDatabase(0);
+        config.useSingleServer().setAddress("redis://192.168.31.50:6379").setDatabase(0);
         return (Redisson) Redisson.create(config);
     }
 
