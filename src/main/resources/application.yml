@@ -1,7 +1,12 @@
 server:
   port: 8010
 spring:
+  profiles:
+    active: dev
   redis:
     host: 127.0.0.1
     port: 6379
     timeout: 3000
+logging:
+  config: classpath:logback-spring.xml
+  logstash: api.efivestar.com:5000

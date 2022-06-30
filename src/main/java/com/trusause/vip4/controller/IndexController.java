@@ -1,5 +1,7 @@
 package com.trusause.vip4.controller;
 
+import com.trusause.vip4.service.IndexService;
+import lombok.extern.slf4j.Slf4j;
 import org.redisson.Redisson;
 import org.redisson.api.RLock;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 import java.util.UUID;
+import java.util.concurrent.CountDownLatch;
 
 /**
  * @Author weicl
@@ -20,6 +23,7 @@ import java.util.UUID;
  */
 @Controller
 @RequestMapping("/index")
+@Slf4j
 public class IndexController {
 
     @Autowired
@@ -28,9 +32,19 @@ public class IndexController {
     @Resource
     StringRedisTemplate stringRedisTemplate;
 
+    @Autowired
+    IndexService indexService;
+
     @ResponseBody
     @GetMapping("/hello")
     public String hello() {
+        log.info("主线程开始执行");
+//        //第一种方式
+//        indexService.joinMethod();
+
+        //第二种方式
+        indexService.countDownLatchMethod();
+        log.info("主线程执行完毕");
         return "hello";
     }
 
