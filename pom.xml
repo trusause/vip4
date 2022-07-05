@@ -77,6 +77,26 @@
             <artifactId>lombok</artifactId>
             <version>1.18.12</version>
         </dependency>
+        <!--Mockito单元测试框架 -->
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>3.3.3</version>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <!-- use 2.4.1 for Java 7 projects -->
+            <version>3.22.0</version>
+            <!-- <version>3.4.1</version> -->
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
