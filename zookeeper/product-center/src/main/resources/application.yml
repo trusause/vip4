@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: product-center
+  cloud:
+    zookeeper:
+      connect-string: localhost:2181
+      discovery:
+        register: true

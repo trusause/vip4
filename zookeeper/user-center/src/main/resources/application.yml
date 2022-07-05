@@ -1,1 +1,10 @@
-
+server:
+  port: 9000
+spring:
+  application:
+    name: user-center
+  cloud:
+    zookeeper:
+      connect-string: localhost:2181
+      discovery:
+        register: true
