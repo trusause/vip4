@@ -64,8 +64,8 @@ public class IndexService {
         thread3.start();
     }
 
-    public void countDownLatchMethod() {
-        CountDownLatch countDownLatch=new CountDownLatch(3);
+    public void countDownLatchMethod(CountDownLatch countDownLatch) {
+//        CountDownLatch countDownLatch=new CountDownLatch(3);
 
         Thread thread1 = new Thread(new Runnable() {
             @Override

@@ -35,15 +35,19 @@ public class IndexController {
     @Autowired
     IndexService indexService;
 
+    private static CountDownLatch countDownLatch = new CountDownLatch(3);
+
     @ResponseBody
     @GetMapping("/hello")
-    public String hello() {
+
+    public String hello() throws InterruptedException {
         log.info("主线程开始执行");
 //        //第一种方式
 //        indexService.joinMethod();
 
         //第二种方式
-        indexService.countDownLatchMethod();
+        indexService.countDownLatchMethod(countDownLatch);
+        countDownLatch.await();
         log.info("主线程执行完毕");
         return "hello";
     }
