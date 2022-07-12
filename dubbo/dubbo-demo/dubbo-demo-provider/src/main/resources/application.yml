@@ -1,0 +1,20 @@
+server:
+  port: 8080
+dubbo:
+  application:
+    name: dubbo-provider-demo
+  registry:
+    address: zookeeper://127.0.0.1:2181
+  metadata-report:
+    address: zookeeper://127.0.0.1:2181
+  scan:
+    base-packages: com.trusause.dubbodemoprovider.service
+  protocol:
+    name: dubbo
+    port: 20880
+#  protocols:
+#    p1:
+#      id: dubbo1
+#      name: dubbo
+#      port: 20881
+#      host: 0.0.0.0
